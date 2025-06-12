@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LAUNCH BAY ACCESS</title>
+  <title>LAUNCH TERMINAL</title>
   <style>
     body {
       background-color: black;
@@ -29,28 +29,32 @@
       color: red;
       margin-top: 1rem;
     }
+    #hint {
+      display: none;
+      color: #ffaa00;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
 
-  <h1>🚀 LAUNCH BAY</h1>
-  <p>Command access required to proceed.</p>
-
+  <h1>🚀 LAUNCH TERMINAL</h1>
+  <p>Command code required to unlock coordinates for MISSION OBJECTIVE.</p>
   <input type="text" id="accessCode" placeholder="Enter launch sequence code" />
   <br>
-  <button onclick="checkCode()">Launch</button>
-
+  <button onclick="checkCode()">LAUNCH</button>
   <p id="errorMsg" class="error"></p>
+
+  <button onclick="document.getElementById('hint').style.display='block'">Need a hint?</button>
+  <p id="hint">The launch key is offline. Try referencing your physical briefing materials.</p>
 
   <script>
     function checkCode() {
       const code = document.getElementById('accessCode').value.trim().toLowerCase();
-      const correct = 'nostromo42';  // <-- Replace this with your real code
+      const correct = 'nostromo42';  // ← Change to your real launch key
 
       if (code === correct) {
-        window.location.href = window.location.pathname + 'itinerary/';
-
-
+        window.location.href = 'itinerary/';
       } else {
         document.getElementById('errorMsg').textContent = 'ACCESS DENIED. Invalid sequence.';
       }
