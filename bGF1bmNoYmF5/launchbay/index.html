@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LAUNCHBAY-4</title>
-    <style>
-      body {
-        background-color: #000;
-        color: #eee;
-        font-family: monospace;
-        padding: 2rem;
+<head>
+  <title>LAUNCH BAY ACCESS</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    input, button {
+      font-family: monospace;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      margin-top: 1rem;
+    }
+    input {
+      width: 300px;
+    }
+    button {
+      background-color: #00ffcc;
+      color: black;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚀 LAUNCH BAY</h1>
+  <p>Command access required to proceed.</p>
+
+  <input type="text" id="accessCode" placeholder="Enter launch sequence code" />
+  <br>
+  <button onclick="checkCode()">Launch</button>
+
+  <p id="errorMsg" class="error"></p>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById('accessCode').value.trim().toLowerCase();
+      const correct = 'nostromo42';  // <-- Replace this with your real code
+
+      if (code === correct) {
+        window.location.href = '/itinerary/';
+      } else {
+        document.getElementById('errorMsg').textContent = 'ACCESS DENIED. Invalid sequence.';
       }
-      .green {
-        color: #7fff7f;
-      }
-    </style>
-  </head>
-  <body>
-    <h1 class="green">ACCESS GRANTED — LAUNCHBAY-4</h1>
-    <p>Clearance Level: BISHOP-CLASS</p>
-    <p>
-      You cracked the binary. Systems are now online.<br>
-      Final override key is: <strong>LV-426</strong>
-    </p>
-    <p>Prepare for departure.</p>
-    <footer style="margin-top: 3rem;">
-      <hr>
-      <p style="font-size: 0.9em; color: #666;">
-        Weyland-Yutani Corp.™ — Trust is a tough thing to come by these days.
-      </p>
-    </footer>
-  </body>
+    }
+  </script>
+
+</body>
 </html>
