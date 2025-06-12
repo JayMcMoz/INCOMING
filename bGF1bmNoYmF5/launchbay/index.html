@@ -54,7 +54,7 @@
       const correct = 'nostromo42';  // ← Change to your real launch key
 
       if (code === correct) {
-        window.location.href = 'itinerary/';
+        window.location.href = window.location.pathname + 'itinerary/';
       } else {
         document.getElementById('errorMsg').textContent = 'ACCESS DENIED. Invalid sequence.';
       }
