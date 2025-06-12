@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DATA ANOMALY – EXORDIUM</title>
+  <title>DECRYPTION INTERFACE</title>
   <style>
     body {
       background-color: black;
       color: #00ffcc;
       font-family: monospace;
       padding: 2rem;
+      line-height: 1.6;
       text-align: center;
+    }
+    .code-block {
+      background-color: #111;
+      display: inline-block;
+      padding: 1rem;
+      margin: 2rem 0;
+      border: 1px solid #333;
+    }
+    .code-block span {
+      display: inline-block;
+      width: 3rem;
+    }
+    input {
+      background-color: #222;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      font-family: monospace;
+      padding: 0.5rem;
+      margin-top: 1rem;
+    }
+    button {
+      background-color: #333;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      font-family: monospace;
+      padding: 0.5rem;
+      cursor: pointer;
     }
     #hint {
       display: none;
       color: #ffaa00;
       margin-top: 1rem;
     }
-    button {
-      font-family: monospace;
-      background-color: #222;
-      color: #00ffcc;
-      border: 1px solid #00ffcc;
-      padding: 0.5rem;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <h1>🧬 DECRYPTION NODE ACTIVE</h1>
+
+  <h1>🔍 DECRYPTION REQUIRED</h1>
 
   <p>
-    Signal contents partially recovered. Untranslated data fragments remain. Residual binary patterns hint at embedded location access.
-  </p>
-  <p>
-    Further analysis required to trace the launch terminal.
+    Data stream partial recovery: numeric pattern retrieved.
   </p>
 
+  <div class="code-block">
+    <span>108</span><span>097</span><span>117</span><br>
+    <span>110</span><span>099</span><span>104</span><br>
+    <span>098</span><span>097</span><span>121</span>
+  </div>
+
+  <p>
+    Determine the access code from the numeric translation to continue.
+  </p>
+
+  <input type="text" id="codeInput" placeholder="Access code..." />
+  <br>
+  <button onclick="checkCode()">Submit</button>
+
+  <br><br>
   <button onclick="document.getElementById('hint').style.display='block'">Need a hint?</button>
-  <p id="hint">Data may be hidden in the code layer itself. Inspect the structure.</p>
+  <p id="hint">Numbers speak — when you know their language. Each one holds a letter, if you're fluent in the right code.</p>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value.toLowerCase().trim();
+      if (input === "launchbay") {
+        window.location.href = "INCOMING/Itinerary";
+      } else {
+        alert("Incorrect code. Try again.");
+      }
+    }
+  </script>
 
 </body>
 </html>
