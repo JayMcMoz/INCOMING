@@ -1,56 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Signal Fragment</title>
+  <title>DATA ANOMALY – EXORDIUM</title>
   <style>
     body {
       background-color: black;
       color: #00ffcc;
       font-family: monospace;
       padding: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 60px);
-      gap: 10px;
-      margin-top: 2rem;
-    }
-    .cell {
-      background: #111;
-      border: 1px solid #333;
-      padding: 1rem;
       text-align: center;
     }
-    .note {
-      color: #444;
-      font-style: italic;
-      margin-top: 2rem;
+    #hint {
+      display: none;
+      color: #ffaa00;
+      margin-top: 1rem;
+    }
+    button {
+      font-family: monospace;
+      background-color: #222;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 0.5rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <h1>🧬 DECRYPTION NODE ACTIVE</h1>
 
-  <h1>📡 Fragment 2: Raw Output</h1>
+  <p>
+    Signal contents partially recovered. Untranslated data fragments remain. Residual binary patterns hint at embedded location access.
+  </p>
+  <p>
+    Further analysis required to trace the launch terminal.
+  </p>
 
-  <p>Recovered numeric sequence:</p>
-
-  <div class="grid">
-    <div class="cell">98</div>
-    <div class="cell">71</div>
-    <div class="cell">70</div>
-    <div class="cell">49</div>
-    <div class="cell">98</div>
-    <div class="cell">109</div>
-    <div class="cell">67</div>
-    <div class="cell">104</div>
-    <div class="cell">89</div>
-    <div class="cell">109</div>
-    <div class="cell">70</div>
-    <div class="cell">53</div>
-  </div>
-
-  <p class="note">The format appears coded — the digits seem to hold hidden meaning.</p>
-  
+  <button onclick="document.getElementById('hint').style.display='block'">Need a hint?</button>
+  <p id="hint">Data may be hidden in the code layer itself. Inspect the structure.</p>
 
 </body>
 </html>
