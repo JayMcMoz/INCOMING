@@ -113,7 +113,7 @@ Proceed only when all systems are green.
       if (i < message.length) {
         terminal.innerHTML = message.slice(0, i) + '<span class="cursor"></span>';
         i++;
-        setTimeout(typeWriter, 8);
+        setTimeout(typeWriter, 8); // typing speed
       } else {
         terminal.innerHTML = message + '<span class="cursor"></span>';
         continueBtn.style.display = 'block';
