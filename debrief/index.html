@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PROJECT EXORDIUM</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+
+    #terminal {
+      white-space: pre-wrap;
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00ff00;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+
+    #continue-btn {
+      display: none;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    button {
+      background-color: black;
+      border: 1px solid #00ff00;
+      color: #00ff00;
+      padding: 0.75rem 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #003300;
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <div id="continue-btn">
+    <a href="INCOMING/index.html"><button>CONTINUE ></button></a>
+  </div>
+
+  <script>
+    const message = `
+> MISSION FILE: EXORDIUM.PRM
+> ACCESS LEVEL: ALPHA-CLEARANCE
+> ISSUED BY: Weyland-Tanaka Systems Division [███-█.█]
+> INITIATING TRANSMISSION...
+
+------------------------------------------------------------
+                [ PROJECT: EXORDIUM ]
+      Experimental Containment & Retrieval Protocol
+------------------------------------------------------------
+
+>>> SYNOPSIS:
+
+The signal was intercepted. Deep-space anomalies matched no known origin.
+A remote research facility — Codename: Outpost E-17 — has gone dark.
+One final transmission escaped the blackout: a scrambled warning,
+followed by a launch sequence that was never completed.
+
+You are part of an emergency recovery team dispatched to investigate.
+
+Mission: 
+- Decode all transmissions.
+- Bypass artificial firewalls.
+- Reactivate the launch sequence before system lockdown.
+
+Expect security measures.
+Expect biological interference.
+Expect the unexpected.
+
+>>> PRIMARY OBJECTIVES:
+
+- Follow the trail left behind by former crew.
+- Decode hidden data streams embedded in low-level system layers.
+- Recover the final sequence key and initiate transport.
+
+>>> INTEL:
+
+“Project EXORDIUM” was designed to test memory, perception, and team cohesion under pressure.
+No one makes it out alone.
+Bring your wits. Trust no interface.  
+Proceed only when all systems are green.
+
+>>> END TRANSMISSION...
+`;
+
+    const terminal = document.getElementById('terminal');
+    const continueBtn = document.getElementById('continue-btn');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < message.length) {
+        terminal.innerHTML = message.slice(0, i) + '<span class="cursor"></span>';
+        i++;
+        setTimeout(typeWriter, 8); // typing speed
+      } else {
+        terminal.innerHTML = message + '<span class="cursor"></span>';
+        continueBtn.style.display = 'block';
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
